@@ -1,7 +1,7 @@
 # useScrollDownToScrollLeft
 
 Traditionally, vertical scrollers work as you scroll down/up, but to scroll horizontally, you need to press shift key and then on scrolling, it works.
-This hook custom react hook lets your horizontal scroller to work without the need of shift key.
+This custom react hook enables your horizontal scroller to **work without the need of shift key**.
 
 **REQUIREMENT**<br/>
 **Your container must be using horizontal scrolling.**
