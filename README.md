@@ -3,11 +3,13 @@
 Traditionally, vertical scrollers work as you scroll down/up, but to scroll horizontally, you need to press shift key and then on scrolling, it works.
 This hook custom react hook lets your horizontal scroller to work without the need of shift key.
 
-**REQUIREMENT: Your container must be using horizontal scrolling.**
+**REQUIREMENT**
+**Your container must be using horizontal scrolling.**
 
 **SYNTAX:**
 ```js
   const scrollerRef = useRef();
+  
   {/* It takes the ref to your scroller as an argument */}
   {/* It returns you the current position of the scroll in your container */}
   const [scrollPosition] = useScrollDownToScrollLeft(scrollerRef)
@@ -31,6 +33,7 @@ export default function App() {
   return (
     <div className="App">
       <p>Scroll Position: {scrollPosition}</p>
+      
       {/* Below is the scroll container */}
       <div className="main" ref={scrollerRef}>
         <div className="flex-container">
