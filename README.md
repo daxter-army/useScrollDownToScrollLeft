@@ -12,7 +12,7 @@ This custom react hook enables your horizontal scroller to **work without the ne
   
   {/* It takes the ref to your scroller as an argument */}
   {/* It returns you the current position of the scroll in your container */}
-  const [scrollPosition] = useScrollDownToScrollLeft(scrollerRef)
+  const scrollPosition = useScrollDownToScrollLeft(scrollerRef)
 ```
 
 **EXAMPLE:**
