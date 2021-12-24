@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useScrollDownToScrollLeft = (scrollerRef) => {
+const useScrollDownToScrollRight = (scrollerRef) => {
   const [scrollPos, setScrollPos] = useState(0);
 
   useEffect(() => {
@@ -14,4 +14,4 @@ const useScrollDownToScrollLeft = (scrollerRef) => {
   return scrollPos;
 };
 
-export default useScrollDownToScrollLeft;
+export default useScrollDownToScrollRight;
