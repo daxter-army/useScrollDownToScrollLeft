@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <p>Scroll Position: {scrollPosition}</p>
+      <p>Scroller Position: {scrollPosition}</p>
       
       {/* Below is the scroll container */}
       <div className="main" ref={scrollerRef}>
