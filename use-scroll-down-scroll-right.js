@@ -1,15 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const useScrollDownToScrollRight = (scrollerRef) => {
   const [scrollPos, setScrollPos] = useState(0);
 
-  useEffect(() => {
-    scrollerRef.current.addEventListener("wheel", (event) => {
+  const updateScroller = useCallback(
+    (event) => {
       const scrollCurrPos = scrollerRef.current.scrollLeft;
       scrollerRef.current.scrollLeft = scrollCurrPos + event.deltaY;
       setScrollPos(scrollCurrPos);
-    });
-  }, [scrollerRef]);
+    },
+    [scrollerRef]
+  );
+
+  useEffect(() => {
+    const scrollerRefCurrent = scrollerRef.current;
+    scrollerRefCurrent.addEventListener("wheel", updateScroller);
+
+    return () => {
+      scrollerRefCurrent.removeEventListener("wheel", updateScroller);
+    };
+  }, [scrollerRef, updateScroller]);
 
   return scrollPos;
 };
